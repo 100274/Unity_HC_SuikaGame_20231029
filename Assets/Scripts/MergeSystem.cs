@@ -1,4 +1,5 @@
-﻿using System;
+﻿using choco;
+using System;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ namespace KID
                 GameObject tempSlimes = Instantiate(prefabslimes[_index], _point, Quaternion.identity);
                 tempSlimes.GetComponent<Rigidbody2D>().gravityScale = 1;
                 Invoke("CanMerge", 0.1f);
+                scoreManager.instance.AddScore(_index);
             
             }
           
