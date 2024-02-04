@@ -13,6 +13,7 @@ namespace choco
         public int[] slimeScores = { 10, 20, 30, 40, 50, 60, 70, 80 };
         private int totalScore;
         public static scoreManager instance;
+        internal object play;
 
         private void Awake()
         {

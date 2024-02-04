@@ -59,6 +59,10 @@ namespace KID
         /// </summary>
         public bool canReleaseSlime = true;
 
+        [SerializeField, Header("放東西音效")]
+        private AudioClip soundDrop;
+
+
         private void Awake()
         {
             currentSlime = RandomSlime();
@@ -110,6 +114,8 @@ namespace KID
                 currentSlime.transform.SetParent(null);
                 // 對調目前與下一隻
                 SwitchCurrentAndNext();
+                SoundManager.instance.PlaySound(soundDrop);
+
             }
         }
 

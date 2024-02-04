@@ -13,6 +13,9 @@ namespace KID
     {
         [Header("所有史萊姆預製物")]
         public GameObject[] prefabslimes;
+        [SerializeField, Header("合成音效")]
+        private AudioClip soundMerge;
+
         public static MergeSystem instance;
         private bool canMerge = true;
 
@@ -34,6 +37,7 @@ namespace KID
                 tempSlimes.GetComponent<Rigidbody2D>().gravityScale = 1;
                 Invoke("CanMerge", 0.1f);
                 scoreManager.instance.AddScore(_index);
+                scoreManager.instance.PlaySound(soundMerge);
             
             }
           
